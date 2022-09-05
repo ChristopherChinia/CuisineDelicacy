@@ -17,4 +17,12 @@ class ApplicationController < Sinatra::Base
       post_comment.to_json
     end
 
+    patch '/comments/:id' do
+      patch_comment = Comment.find(params[:id])
+      patch_comment.update(
+        feedback: params[:feedback]
+      )
+      patch_comment.to_json
+    end
+
 end

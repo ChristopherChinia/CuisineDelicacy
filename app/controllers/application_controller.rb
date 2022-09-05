@@ -8,13 +8,13 @@ class ApplicationController < Sinatra::Base
     end
 
     post '/comments' do
-      post_message = Message.create(
+      post_comment = Message.create(
         feedback: params[:feedback],
         author: params[:author],
         created_at: params[:created_at],
         updated_at: params[:updated_at]
       )
-      post_message.to_json
+      post_comment.to_json
     end
 
 end

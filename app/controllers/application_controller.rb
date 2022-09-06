@@ -8,9 +8,10 @@ class ApplicationController < Sinatra::Base
     end
 
     post '/comments' do
-      post_comment = Message.create(
+      post_comment = Comment.create(
         feedback: params[:feedback],
         author: params[:author],
+        food: params[:food],
         created_at: params[:created_at],
         updated_at: params[:updated_at]
       )
